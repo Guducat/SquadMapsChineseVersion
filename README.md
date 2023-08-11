@@ -12,7 +12,7 @@
   <p>
     一站式查看Squad的地图与图层信息！
     <br />
-    <a href="https://discord.mahto.id/">加入我们的Discord频道</a>
+    <a href="https://discord.mahto.id/">加入我们的Discord频道(英文)</a>
     ·
     <a href="https://github.com/mahtoid/SquadMaps/issues/new?assignees=&labels=bug&template=bug-report.yml">上报Bug</a>
     ·
