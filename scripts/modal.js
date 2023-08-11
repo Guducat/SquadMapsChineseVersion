@@ -108,11 +108,11 @@ function view_vehicles(map)
         document.getElementById("modal_squadlanes_link").style.display = "none";
     }
     document.getElementById("modal_layer_name").innerHTML = map.Name;
-    document.getElementById("modal_team_1_tickets").innerHTML = map.team1.tickets + " tickets";
-    document.getElementById("modal_team_2_tickets").innerHTML = map.team2.tickets + " tickets";
+    document.getElementById("modal_team_1_tickets").innerHTML = map.team1.tickets + " 基础票";
+    document.getElementById("modal_team_2_tickets").innerHTML = map.team2.tickets + " 基础票";
     document.getElementById("map").style.backgroundImage = "url(img/maps/full_size/" + map.rawName + ".jpg)";
     document.getElementById("modal_map_url").href = "img/maps/full_size/" + map.rawName + ".jpg";
-    map.team1.commander == "true" ? document.getElementById("modal_value_commander").innerHTML = "Yes" : document.getElementById("modal_value_commander").innerHTML = "No";
+    map.team1.commander == "true" ? document.getElementById("modal_value_commander").innerHTML = "有" : document.getElementById("modal_value_commander").innerHTML = "无";
     document.getElementById("modal_value_number_of_flags").innerHTML = map.capturePoints;
     document.getElementById("modal_value_weather").innerHTML = map.lighting;
 
@@ -122,7 +122,7 @@ function view_vehicles(map)
             document.getElementById("modal_team_1_name").innerHTML = "CAF";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_CAF.png"; break;
         case "British Armed Forces":
-            document.getElementById("modal_team_1_name").innerHTML = "GB";
+            document.getElementById("modal_team_1_name").innerHTML = "BAF";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_GB.png"; break;
         case "Insurgent Forces":
             document.getElementById("modal_team_1_name").innerHTML = "INS";
@@ -131,7 +131,7 @@ function view_vehicles(map)
             document.getElementById("modal_team_1_name").innerHTML = "IMF";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_MIL.png"; break;
         case "Russian Ground Forces":
-            document.getElementById("modal_team_1_name").innerHTML = "RUS";
+            document.getElementById("modal_team_1_name").innerHTML = "RGF";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_RUS.png"; break;
         case "United States Army":
             document.getElementById("modal_team_1_name").innerHTML = "USA";
@@ -143,7 +143,7 @@ function view_vehicles(map)
             document.getElementById("modal_team_1_name").innerHTML = "MEA";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_MEA.png"; break;
         case "Australian Defence Force":
-            document.getElementById("modal_team_1_name").innerHTML = "AUS";
+            document.getElementById("modal_team_1_name").innerHTML = "ADF";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_AUS.png"; break;
         case "People's Liberation Army":
             document.getElementById("modal_team_1_name").innerHTML = "PLA";
@@ -167,7 +167,7 @@ function view_vehicles(map)
             document.getElementById("modal_team_2_name").innerHTML = "CAF";
             document.getElementById("modal_team_2_flag").src = "img/icons/flag_CAF.png"; break;
         case "British Armed Forces":
-            document.getElementById("modal_team_2_name").innerHTML = "GB";
+            document.getElementById("modal_team_2_name").innerHTML = "BAF";
             document.getElementById("modal_team_2_flag").src = "img/icons/flag_GB.png"; break;
         case "Insurgent Forces":
             document.getElementById("modal_team_2_name").innerHTML = "INS";
@@ -176,7 +176,7 @@ function view_vehicles(map)
             document.getElementById("modal_team_2_name").innerHTML = "IMF";
             document.getElementById("modal_team_2_flag").src = "img/icons/flag_MIL.png"; break;
         case "Russian Ground Forces":
-            document.getElementById("modal_team_2_name").innerHTML = "RUS";
+            document.getElementById("modal_team_2_name").innerHTML = "RGF";
             document.getElementById("modal_team_2_flag").src = "img/icons/flag_RUS.png"; break;
         case "United States Army":
             document.getElementById("modal_team_2_name").innerHTML = "USA";
@@ -188,7 +188,7 @@ function view_vehicles(map)
             document.getElementById("modal_team_2_name").innerHTML = "MEA";
             document.getElementById("modal_team_2_flag").src = "img/icons/flag_MEA.png"; break;
         case "Australian Defence Force":
-            document.getElementById("modal_team_2_name").innerHTML = "AUS";
+            document.getElementById("modal_team_2_name").innerHTML = "ADF";
             document.getElementById("modal_team_2_flag").src = "img/icons/flag_AUS.png"; break;
         case "People's Liberation Army":
             document.getElementById("modal_team_2_name").innerHTML = "PLA";
@@ -222,7 +222,7 @@ function view_vehicles(map)
             } else vehicle.icon = null;
 
             vehicle_name.innerHTML = vehicle.type;
-            vehicle.delay != 0 ? vehicle_delay.innerHTML = vehicle.delay + " mins" : vehicle_delay.innerHTML = "";
+            vehicle.delay != 0 ? vehicle_delay.innerHTML = "开局" + vehicle.delay + "分钟时刷新" : vehicle_delay.innerHTML = "";
 
             li.appendChild(vehicle_amount);
             li.appendChild(vehicle_img);
@@ -249,7 +249,7 @@ function view_vehicles(map)
             } else vehicle.icon = null;
 
             vehicle_name.innerHTML = vehicle.type;
-            vehicle.delay != 0 ? vehicle_delay.innerHTML = vehicle.delay + " mins" : vehicle_delay.innerHTML = "";
+            vehicle.delay != 0 ? vehicle_delay.innerHTML = "开局" + vehicle.delay + "分钟时刷新" : vehicle_delay.innerHTML = "";
 
             li.appendChild(vehicle_amount);
             li.appendChild(vehicle_img);
