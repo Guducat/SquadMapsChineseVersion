@@ -1,7 +1,4 @@
-<div align="right">
-    <strong><a href="https://github.com/mahtoid/SquadMaps/issues/34">The Future of SquadMaps</a></strong>
-</div>
-<br>
+
 <div align="center">
 
 [![Forks][forks-shield]][forks-url]
@@ -10,38 +7,42 @@
 [![GPL License][license-shield]][license-url]
 
 
-  <h2>SquadMaps</h2>
+  <h2>Squad地图信息站</h2>
 
   <p>
-    View map and layer information for Squad!
+    一站式查看Squad的地图与图层信息！
     <br />
-    <a href="https://discord.mahto.id/">Join Discord</a>
+    <a href="https://discord.mahto.id/">加入我们的Discord频道</a>
     ·
-    <a href="https://github.com/mahtoid/SquadMaps/issues/new?assignees=&labels=bug&template=bug-report.yml">Report Bug</a>
+    <a href="https://github.com/mahtoid/SquadMaps/issues/new?assignees=&labels=bug&template=bug-report.yml">上报Bug</a>
     ·
-    <a href="https://github.com/mahtoid/SquadMaps/issues/new?assignees=&labels=enhancement&template=feature-request.yml">Request Feature</a>
+    <a href="https://github.com/mahtoid/SquadMaps/issues/new?assignees=&labels=enhancement&template=feature-request.yml">请求更多功能</a>
   </p>
 </div>
 
 
 ---
-## About
-SquadMaps is a website to display all the maps and layers in Squad. 
+## 关于
+SquadMaps 是一个用于展示《Squad》游戏中所有地图和图层的网站。
 
-Along with every map/layer, each contains:
- - Team Information (Name and Total Tickets)
- - Vehicle Information (Name, Quantity and Delays)
- - Layer Information (Weather, Command and Total Capture Points)
- - and more!
 
----
-## Usage
-To use SquadMaps, head to https://squadmaps.com and begin! 
+每个地图/图层都包含以下信息：
+- 队伍信息（名称和总票数）
+- 车辆信息（名称、数量和刷新延迟）
+- 图层信息（天气、指令和地图占领点的数量）
+- 以及其他更多！
 
-The navigation of the site will take you to the map section where you can see an overview of all the different layers. Clicking on the 'Vehicle Icon' you will be able to get more detail of the layer.
+### 另声明
+本项目(SquadMapsChineseVersion)作为SquadMaps的一个fork分支，仅负责本地化与镜像站运营，如在使用过程中发现bug，请在主项目的issues处进行反馈。
 
 ---
-## Screenshots
+## 使用说明
+要使用 SquadMaps，请访问 https://squadmaps.com 以开始！
+
+你可以从网站顶端的导航模块快速查看你想要查看的地图，在那可以概览到所有不同图层的信息，点击“驾驶员”职业图标以获取更多详细信息。
+
+---
+## 截图
 
 <details><summary><b>Homepage</b></summary>
 <img src="https://raw.githubusercontent.com/mahtoid/SquadMaps/master/img/screenshots/squadmaps_homepage.png">
@@ -51,16 +52,17 @@ The navigation of the site will take you to the map section where you can see an
 </details>
 
 ---
-## Additional Functions
-You can use the object inside the modal.js, for example to make your own visual map statistics like:
+## 附加功能
+您可以使用 modal.js 中的对象，自行开发出例如图示这样的可视化地图统计：
 
 <img src="img/screenshots/example_1.jpg" alt="Logo" width="500"/>
 
 ---
-## Attributions
+## 归属说明
 
-- *This project borrows captured Map Data from [Squad Wiki Editorial](https://github.com/Squad-Wiki-Editorial/squad-wiki-pipeline-map-data) repository.*
-- *This project borrows icons, map backgrounds and game information from game files shipped through Steam for [Squad](https://joinsquad.com).*
+
+- *本项目从 [Squad Wiki Editorial](https://github.com/Squad-Wiki-Editorial/squad-wiki-pipeline-map-data) 中借用了捕获的地图数据。*
+- *本项目从通过 Steam 上获取的《[Squad](https://joinsquad.com)》游戏文件中借用了图标、地图背景和游戏信息。*
 
 <!-- LINK DUMP -->
 [language-dom]: https://img.shields.io/github/languages/top/mahtoid/SquadMaps?style=for-the-badge
