@@ -35,6 +35,8 @@ SquadMaps 是一个用于展示《Squad》游戏中所有地图和图层的网�
 ### 另声明
 本项目(SquadMapsChineseVersion)作为SquadMaps的一个fork分支，经过部分，一些部分会与母项目不同。
 
+###翻译问题等本地化相关问题请在此项目提交issues
+
 ---
 
 ## 使用说明
