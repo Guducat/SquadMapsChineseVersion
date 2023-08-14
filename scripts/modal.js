@@ -86,6 +86,9 @@ function view_vehicles(map)
     }
     document.getElementById("layer_info").value = map.Name + " (" + team1 + " vs " + team2 + ")";
 
+    document.getElementById("layer_Change").value = "AdminChangeLayer " + map.rawName;
+    document.getElementById("layer_Next").value = "AdminSetNextLayer " + map.rawName;
+
 
     if (map.type == "RAASLane Graph" || map.type == "RAASGraph" || map.type == "Invasion Random Graph")
     {
@@ -108,8 +111,8 @@ function view_vehicles(map)
         document.getElementById("modal_squadlanes_link").style.display = "none";
     }
     document.getElementById("modal_layer_name").innerHTML = map.Name;
-    document.getElementById("modal_team_1_tickets").innerHTML = map.team1.tickets + " 基础票";
-    document.getElementById("modal_team_2_tickets").innerHTML = map.team2.tickets + " 基础票";
+    document.getElementById("modal_team_1_tickets").innerHTML = map.team1.tickets + " 开局票数";
+    document.getElementById("modal_team_2_tickets").innerHTML = map.team2.tickets + " 开局票数";
     document.getElementById("map").style.backgroundImage = "url(img/maps/full_size/" + map.rawName + ".jpg)";
     document.getElementById("modal_map_url").href = "img/maps/full_size/" + map.rawName + ".jpg";
     map.team1.commander == "true" ? document.getElementById("modal_value_commander").innerHTML = "有" : document.getElementById("modal_value_commander").innerHTML = "无";
@@ -119,40 +122,40 @@ function view_vehicles(map)
     switch (map.team1.faction)
     {
         case "Canadian Armed Forces":
-            document.getElementById("modal_team_1_name").innerHTML = "CAF";
+            document.getElementById("modal_team_1_name").innerHTML = "加拿大陆军";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_CAF.png"; break;
         case "British Armed Forces":
-            document.getElementById("modal_team_1_name").innerHTML = "BAF";
+            document.getElementById("modal_team_1_name").innerHTML = "英国陆军";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_GB.png"; break;
         case "Insurgent Forces":
-            document.getElementById("modal_team_1_name").innerHTML = "INS";
+            document.getElementById("modal_team_1_name").innerHTML = "叛军(老乡)";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_INS.png"; break;
         case "Irregular Militia Forces":
-            document.getElementById("modal_team_1_name").innerHTML = "IMF";
+            document.getElementById("modal_team_1_name").innerHTML = "非正规民兵(车臣)";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_MIL.png"; break;
         case "Russian Ground Forces":
-            document.getElementById("modal_team_1_name").innerHTML = "RGF";
+            document.getElementById("modal_team_1_name").innerHTML = "俄罗斯陆军";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_RUS.png"; break;
         case "United States Army":
-            document.getElementById("modal_team_1_name").innerHTML = "USA";
+            document.getElementById("modal_team_1_name").innerHTML = "美国陆军";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_USA.png"; break;
         case "United States Marine Corps":
-            document.getElementById("modal_team_1_name").innerHTML = "USMC";
+            document.getElementById("modal_team_1_name").innerHTML = "美国海军陆战队";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_USMC.png"; break;
         case "Middle Eastern Alliance":
-            document.getElementById("modal_team_1_name").innerHTML = "MEA";
+            document.getElementById("modal_team_1_name").innerHTML = "中东联军";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_MEA.png"; break;
         case "Australian Defence Force":
-            document.getElementById("modal_team_1_name").innerHTML = "ADF";
+            document.getElementById("modal_team_1_name").innerHTML = "澳大利亚国防军";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_AUS.png"; break;
         case "People's Liberation Army":
-            document.getElementById("modal_team_1_name").innerHTML = "PLA";
+            document.getElementById("modal_team_1_name").innerHTML = "中国人民解放军";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_PLA.png"; break;
         case "PLA Navy Marine Corps":
-            document.getElementById("modal_team_1_name").innerHTML = "PLANMC";
+            document.getElementById("modal_team_1_name").innerHTML = "解放军海军陆战队";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_PLANMC.png"; break;
         case "Russian Airborne Forces":
-            document.getElementById("modal_team_1_name").innerHTML = "VDV";
+            document.getElementById("modal_team_1_name").innerHTML = "俄罗斯空降部队";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_VDV.png"; break;
         default:
             console.error("Could not read team name: " + map.team1.faction);
@@ -164,40 +167,40 @@ function view_vehicles(map)
     switch (map.team2.faction)
     {
         case "Canadian Armed Forces":
-            document.getElementById("modal_team_2_name").innerHTML = "CAF";
+            document.getElementById("modal_team_2_name").innerHTML = "加拿大陆军";
             document.getElementById("modal_team_2_flag").src = "img/icons/flag_CAF.png"; break;
         case "British Armed Forces":
-            document.getElementById("modal_team_2_name").innerHTML = "BAF";
+            document.getElementById("modal_team_2_name").innerHTML = "英国陆军";
             document.getElementById("modal_team_2_flag").src = "img/icons/flag_GB.png"; break;
         case "Insurgent Forces":
-            document.getElementById("modal_team_2_name").innerHTML = "INS";
+            document.getElementById("modal_team_2_name").innerHTML = "叛军(老乡)";
             document.getElementById("modal_team_2_flag").src = "img/icons/flag_INS.png"; break;
         case "Irregular Militia Forces":
-            document.getElementById("modal_team_2_name").innerHTML = "IMF";
+            document.getElementById("modal_team_2_name").innerHTML = "非正规民兵(车臣)";
             document.getElementById("modal_team_2_flag").src = "img/icons/flag_MIL.png"; break;
         case "Russian Ground Forces":
-            document.getElementById("modal_team_2_name").innerHTML = "RGF";
+            document.getElementById("modal_team_2_name").innerHTML = "俄罗斯陆军";
             document.getElementById("modal_team_2_flag").src = "img/icons/flag_RUS.png"; break;
         case "United States Army":
-            document.getElementById("modal_team_2_name").innerHTML = "USA";
+            document.getElementById("modal_team_2_name").innerHTML = "美国陆军";
             document.getElementById("modal_team_2_flag").src = "img/icons/flag_USA.png"; break;
         case "United States Marine Corps":
-            document.getElementById("modal_team_1_name").innerHTML = "USMC";
+            document.getElementById("modal_team_1_name").innerHTML = "美国海军陆战队";
             document.getElementById("modal_team_1_flag").src = "img/icons/flag_USMC.png"; break;
         case "Middle Eastern Alliance":
-            document.getElementById("modal_team_2_name").innerHTML = "MEA";
+            document.getElementById("modal_team_2_name").innerHTML = "中东联军";
             document.getElementById("modal_team_2_flag").src = "img/icons/flag_MEA.png"; break;
         case "Australian Defence Force":
-            document.getElementById("modal_team_2_name").innerHTML = "ADF";
+            document.getElementById("modal_team_2_name").innerHTML = "澳大利亚国防军";
             document.getElementById("modal_team_2_flag").src = "img/icons/flag_AUS.png"; break;
         case "People's Liberation Army":
-            document.getElementById("modal_team_2_name").innerHTML = "PLA";
+            document.getElementById("modal_team_2_name").innerHTML = "中国人民解放军";
             document.getElementById("modal_team_2_flag").src = "img/icons/flag_PLA.png"; break;
         case "PLA Navy Marine Corps":
-            document.getElementById("modal_team_2_name").innerHTML = "PLANMC";
+            document.getElementById("modal_team_2_name").innerHTML = "解放军海军陆战队";
             document.getElementById("modal_team_2_flag").src = "img/icons/flag_PLANMC.png"; break;
         case "Russian Airborne Forces":
-            document.getElementById("modal_team_2_name").innerHTML = "VDV";
+            document.getElementById("modal_team_2_name").innerHTML = "俄罗斯空降部队";
             document.getElementById("modal_team_2_flag").src = "img/icons/flag_VDV.png"; break;
         default:
             console.error("Could not read team name: " + map.team2.faction);
@@ -212,7 +215,7 @@ function view_vehicles(map)
 
             var vehicle_amount = document.createElement("p");
             var vehicle_img = document.createElement("img");
-            var vehicle_name = document.createElement("h6");
+            var vehicle_name = document.createElement("h7");
             var vehicle_delay = document.createElement("small");
 
             vehicle_amount.innerHTML = vehicle.count;
@@ -239,7 +242,7 @@ function view_vehicles(map)
 
             var vehicle_amount = document.createElement("p");
             var vehicle_img = document.createElement("img");
-            var vehicle_name = document.createElement("h6");
+            var vehicle_name = document.createElement("h7");
             var vehicle_delay = document.createElement("small");
 
             vehicle_amount.innerHTML = vehicle.count;
@@ -305,6 +308,22 @@ function copyLayerName()
 function copyLayerInfo()
 {
     var layerInfoInput = document.getElementById("layer_info");
+    layerInfoInput.select();
+    layerInfoInput.setSelectionRange(0,99999);
+    navigator.clipboard.writeText(layerInfoInput.value);
+}
+
+function copyChangeLayer()
+{
+    var layerInfoInput = document.getElementById("layer_Change");
+    layerInfoInput.select();
+    layerInfoInput.setSelectionRange(0,99999);
+    navigator.clipboard.writeText(layerInfoInput.value);
+}
+
+function copyNextLayer()
+{
+    var layerInfoInput = document.getElementById("layer_Next");
     layerInfoInput.select();
     layerInfoInput.setSelectionRange(0,99999);
     navigator.clipboard.writeText(layerInfoInput.value);
