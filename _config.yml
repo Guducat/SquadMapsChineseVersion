@@ -1,6 +1,6 @@
 theme: jekyll-theme-cayman
 plugins:
   - jekyll-seo-tag
-title: "SQUADMAPS: All maps and layers in Squad"
-description: "SquadMaps is a site to help Squad players and server admins find their favorite maps. All maps and layers in one place."
-url: "https://mahtoid.github.io/SquadMaps/"
+title: "Squad地图信息站: 一站式查看squad所有地图图层"
+description: "Squad地图信息站可以帮助玩家与服务器管理员找到他们所需或喜爱的地图。一站式查看所有图层。"
+url: "https://squadmaps.cn/"
